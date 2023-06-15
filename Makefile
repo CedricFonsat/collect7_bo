@@ -22,3 +22,6 @@ docker-build: ## Start the docker container
 
 docker-sh: ## Connect to the docker container
 	docker exec -it www_docker_symfony bash
+
+docker-sh-win:
+    winpty docker exec -it www_docker_symfony bash
