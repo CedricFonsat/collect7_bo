@@ -5,9 +5,12 @@ namespace App\Entity;
 use App\Repository\TestRepository;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\ApiFilter;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 
 #[ORM\Entity(repositoryClass: TestRepository::class)]
 #[ApiResource]
+#[ApiFilter(SearchFilter::class, properties: ['test' => 'partial'])]
 class Test
 {
     #[ORM\Id]
